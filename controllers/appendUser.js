@@ -6,7 +6,11 @@ exports.addUser = (ctx) => {
       id: from.id,
       username: from.username,
       name_: from.first_name,
-      isAdmin: false,
+      isCountry: false,
+      isAge: false,
+      isBuilt: false,
+      isTested: false,
+      isCandidate: false,
     };
     let data;
     let obj = fs.readFileSync("./assets/users.json", 'utf-8')
@@ -22,5 +26,5 @@ exports.addUser = (ctx) => {
         data.users.push(new_user)
     }
     fs.writeFileSync("./assets/users.json", JSON.stringify(data));
-    ctx.sendMessage(`Hello, ${new_user.name_}`)
+    ctx.sendMessage(`Hello, ${new_user.name_}, how are you ??`)
   }
