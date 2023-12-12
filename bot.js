@@ -8,10 +8,15 @@ const appendUser = require("./controllers/appendUser")
 const savePhoto = require("./controllers/savePhoto")
 const https = require("https")
 const fs = require("fs")
+const sleep = require("sleep")
 
 bot.start(appendUser.addUser);
 
-bot.hears(['hi', 'Hi', 'Hello', 'hello', 'hey', 'Hey'], ctx => ctx.reply('hey'))
+bot.hears(['hi', 'Hi', 'Hello', 'hello', 'hey', 'Hey'], async (ctx) => {
+    sleep.sleep(2)
+    await ctx.reply('hey')
+  } 
+)
 
 bot.on(message("text"), async (ctx) => {
   ctx.sendMessage(`Where are you from ?`, key_origin);
@@ -30,11 +35,13 @@ bot.on(message('photo'), async (ctx) => {
             response.pipe(fs.createWriteStream(`./assets/pics/${user}/${imageId}.jpeg`))
         );
     });
-    ctx.reply('😍')
+    await ctx.reply('😍')
+    sleep.sleep(2)
+    await ctx.replyWithPhoto({source: './assets/pics/bot2/image.jpeg'})
 });
 
-bot.on(message("sticker"), (ctx) => {
-  ctx.sendMessage('👍')
+bot.on(message("sticker"), async (ctx) => {
+  await ctx.sendMessage('👍')
 })
 
 
