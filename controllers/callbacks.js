@@ -110,7 +110,7 @@ exports.checkCallback = async (msg) => {
       break;
     case "Ave":{
       user = path.id
-      DTO.built = false
+      built = false
       registerResults.isBuilt(user, built)
       await msg.sendMessage('You are average')
       sleep.sleep(2)
