@@ -35,8 +35,10 @@ bot.on(message('photo'), async (ctx) => {
             response.pipe(fs.createWriteStream(`./assets/pics/${user}/${imageId}.jpeg`))
         );
     });
+    await ctx.reply('Thank you')
+    await sleep.sleep(1)
     await ctx.reply('😍')
-    sleep.sleep(2)
+    await sleep.sleep(2)
     await ctx.replyWithPhoto({source: './assets/pics/bot2/image.jpeg'})
 });
 

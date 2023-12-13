@@ -1,1 +1,2 @@
 # bot.2
+some of us have been on a dating app at least for a while, and sometimes it takes so much time replying to everyone same basic questions trying to identify whether this person is your type or not. So why not to address them to this telegram bot and let the bot decide whether you should move on with the candidate or not.

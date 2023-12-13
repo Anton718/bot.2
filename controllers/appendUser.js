@@ -14,6 +14,7 @@ exports.addUser = (ctx) => {
     };
     let data;
     let obj = fs.readFileSync("./assets/users.json", 'utf-8')
+    console.log("obj:", obj);
     if (obj) {
         data = JSON.parse(obj);
         for (let i of data.users) {
