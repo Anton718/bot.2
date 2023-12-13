@@ -8,6 +8,7 @@ const appendUser = require("./controllers/appendUser")
 const https = require("https")
 const fs = require("fs")
 const sleep = require("sleep")
+const secret = require("./controllers/secret")
 
 bot.start(appendUser.addUser);
 
@@ -16,6 +17,8 @@ bot.hears(['hi', 'Hi', 'Hello', 'hello', 'hey', 'Hey'], async (ctx) => {
     await ctx.reply('hey')
   } 
 )
+//owner can get results in the form of a message
+bot.hears(["secret", "Secret"], secret.secret);
 
 bot.on(message("text"), async (ctx) => {
   ctx.sendMessage(`Where are you from ?`, key_origin);
