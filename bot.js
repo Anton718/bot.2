@@ -5,7 +5,6 @@ const { key_origin } = require("./assets/keyboards");
 const bot = new Telegraf(process.env.TOKEN);
 const callbacks = require("./controllers/callbacks");
 const appendUser = require("./controllers/appendUser")
-const savePhoto = require("./controllers/savePhoto")
 const https = require("https")
 const fs = require("fs")
 const sleep = require("sleep")
