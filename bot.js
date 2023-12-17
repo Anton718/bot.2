@@ -40,7 +40,9 @@ bot.on(message('photo'), async (ctx) => {
     await ctx.reply('Thank you')
     await sleep.sleep(1)
     await ctx.reply('😍')
-    await sleep.sleep(2)
+    await sleep.sleep(1)
+    await ctx.reply('This is me')
+    await sleep.sleep(1)
     await ctx.replyWithPhoto({source: './assets/pics/bot2/image.jpeg'})
 });
 
